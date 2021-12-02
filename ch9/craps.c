@@ -17,7 +17,7 @@ int main(void) {
 
     srand((unsigned) time(NULL));
 
-    for (;;) {
+    do {
         status = play_game();
         if (status) 
             printf("You win!\n");
@@ -25,18 +25,8 @@ int main(void) {
             printf("You lose!\n");
         
         printf("Play again? ");
-
-        do {
-            scanf("%c", &play_again);
-        } while (play_again == '\n');
-
-        if (play_again == 'y') {
-            printf("\n");
-            continue;
-        }
-        else 
-            break;
-    }
+        scanf(" %c", &play_again);
+    } while (play_again == 'y');
 
     return 0;
 }
